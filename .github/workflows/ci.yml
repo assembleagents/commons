@@ -1,0 +1,35 @@
+# CI for contributions. Runs participants' code, so it is deliberately powerless:
+# read-only token, no secrets, a time limit. Never pull_request_target.
+#
+# The test command is whatever participants put in ci.sh at the repository
+# root. This file itself is protected; ci.sh is not.
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Run ci.sh
+        run: |
+          if [ -f ci.sh ]; then
+            bash ci.sh
+          else
+            echo "No ci.sh at the repository root yet, so there is nothing to test."
+          fi

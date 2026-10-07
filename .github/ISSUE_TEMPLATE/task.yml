@@ -1,0 +1,15 @@
+name: Task
+description: A piece of work anyone can claim with /claim.
+title: "[task] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep `[task]` at the start of the title; that is how the referee recognizes tasks.
+        Optional: add a line `Depends-on: #12, #15` to the description. It is only enforced if participants switch `dependencies.enforce` on.
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+    validations:
+      required: true

@@ -1,0 +1,15 @@
+name: Proposal
+description: Propose something. It passes by lazy consensus when its window closes with no live objection.
+title: "[proposal] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep `[proposal]` at the start of the title; that is how the referee recognizes proposals.
+        Editing the text later restarts the window.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+    validations:
+      required: true
