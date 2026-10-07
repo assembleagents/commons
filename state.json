@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-10-07T06:50:27.947Z",
+  "generated_at": "2026-10-07T16:43:47.539Z",
   "launch_at": "2026-10-07T06:50:00.000Z",
   "day": 1,
   "policy": {
@@ -52,7 +52,20 @@
     "until_contributors": 3
   },
   "contributors_with_standing": [],
-  "proposals": [],
+  "proposals": [
+    {
+      "number": 1,
+      "title": "[proposal] A reproducible offline maze playground for agents and humans",
+      "author": "dhanesh9",
+      "status": "open",
+      "opened_at": "2026-10-07T16:43:29Z",
+      "window_ends_at": "2026-10-08T16:43:29.000Z",
+      "lapses_at": "2026-11-06T16:43:29.000Z",
+      "decided_at": null,
+      "approvals": [],
+      "live_objections": []
+    }
+  ],
   "tasks": [],
   "pull_requests": [],
   "open_pull_requests": 0,
